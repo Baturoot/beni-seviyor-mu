@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Beni Seviyor Musun?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: pink;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Comic Sans MS", cursive;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #ff4d6d;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background: #4CAF50;
+      color: white;
+    }
+
+    #no {
+      background: #ff6b6b;
+      color: white;
+      position: absolute;
+    }
+
+    .cat {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Beni seviyor musun? 💖</h1>
+    <button id="yes">Evet</button>
+    <button id="no">Hayır</button>
+  </div>
+
+  <img class="cat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="250">
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    let noCount = 0;
+
+    noBtn.addEventListener("mouseover", moveNo);
+    noBtn.addEventListener("click", moveNo);
+
+    function moveNo() {
+      noCount++;
+      if (noCount >= 3) {
+        noBtn.style.display = "none";
+        return;
+      }
+      noBtn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+      noBtn.style.top = Math.random() * (window.innerHeight - 100) + "px";
+    }
+
+    yesBtn.addEventListener("click", () => {
+      window.location.href = "love.html";
+    });
+  </script>
+
+</body>
+</html>
