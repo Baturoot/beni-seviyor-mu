@@ -1,93 +1,194 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Beni Seviyor Musun?</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: pink;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Comic Sans MS", cursive;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
+<title>Serra 💖</title>
 
-    h1 {
-      font-size: 48px;
-      color: #ff4d6d;
-    }
+<style>
+body {
+  margin:0;
+  height:100vh;
+  background:pink;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  font-family:"Comic Sans MS", cursive;
+}
 
-    button {
-      font-size: 20px;
-      padding: 12px 25px;
-      margin: 10px;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-    }
+/* Hareketli kalpler */
+.hearts {
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  z-index:0;
+  pointer-events:none;
+}
 
-    #yes {
-      background: #4CAF50;
-      color: white;
-    }
+.heart {
+  position:absolute;
+  color:rgba(255,0,100,0.25);
+  font-size:35px;
+  animation:float 8s infinite linear;
+}
 
-    #no {
-      background: #ff6b6b;
-      color: white;
-      position: absolute;
-    }
+@keyframes float {
+  from {
+    transform:translateY(100vh) scale(1);
+    opacity:0;
+  }
 
-    .cat {
-      position: fixed;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0.8;
-    }
-  </style>
+  20% {
+    opacity:1;
+  }
+
+  to {
+    transform:translateY(-20vh) scale(1.5);
+    opacity:0;
+  }
+}
+
+
+.container {
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+
+h1 {
+  font-size:45px;
+  color:#ff3366;
+}
+
+
+button {
+  font-size:22px;
+  padding:12px 30px;
+  margin:10px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+
+#yes {
+  background:#4CAF50;
+  color:white;
+}
+
+
+#no {
+  background:#ff6b6b;
+  color:white;
+  position:absolute;
+}
+
+
+/* Kedi */
+.cat {
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:350px;
+  max-width:80vw;
+  opacity:0.9;
+  z-index:1;
+}
+
+
+/* Telefon */
+@media(max-width:600px){
+
+h1 {
+  font-size:32px;
+}
+
+button {
+  font-size:18px;
+}
+
+.cat {
+  width:280px;
+}
+
+}
+
+</style>
 </head>
+
+
 <body>
 
-  <div class="container">
-    <h1>Beni seviyor musun? 💖</h1>
-    <button id="yes">Evet</button>
-    <button id="no">Hayır</button>
-  </div>
 
-  <img class="cat" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="250">
+<div class="hearts">
 
-  <script>
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
-    let noCount = 0;
+<div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
+<div class="heart" style="left:25%;animation-delay:2s;">💗</div>
+<div class="heart" style="left:40%;animation-delay:4s;">❤️</div>
+<div class="heart" style="left:60%;animation-delay:1s;">💖</div>
+<div class="heart" style="left:75%;animation-delay:3s;">💕</div>
+<div class="heart" style="left:90%;animation-delay:5s;">❤️</div>
 
-    noBtn.addEventListener("mouseover", moveNo);
-    noBtn.addEventListener("click", moveNo);
+</div>
 
-    function moveNo() {
-      noCount++;
-      if (noCount >= 3) {
-        noBtn.style.display = "none";
-        return;
-      }
-      noBtn.style.left = Math.random() * (window.innerWidth - 100) + "px";
-      noBtn.style.top = Math.random() * (window.innerHeight - 100) + "px";
-    }
 
-    yesBtn.addEventListener("click", () => {
-      window.location.href = "love.html";
-    });
-  </script>
+<div class="container">
+
+<h1>Serra, beni seviyor musun? 💖</h1>
+
+<button id="yes">Evet</button>
+
+<button id="no">Hayır</button>
+
+</div>
+
+
+<img class="cat"
+src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif">
+
+
+<script>
+
+const noBtn=document.getElementById("no");
+const yesBtn=document.getElementById("yes");
+
+let noCount=0;
+
+
+noBtn.addEventListener("mouseover",moveNo);
+noBtn.addEventListener("click",moveNo);
+
+
+function moveNo(){
+
+noCount++;
+
+if(noCount>=3){
+noBtn.style.display="none";
+return;
+}
+
+
+noBtn.style.left=Math.random()*(window.innerWidth-120)+"px";
+noBtn.style.top=Math.random()*(window.innerHeight-80)+"px";
+
+}
+
+
+
+yesBtn.onclick=function(){
+
+window.location.href="love.html";
+
+}
+
+
+</script>
+
 
 </body>
 </html>
-
