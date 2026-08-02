@@ -1,36 +1,126 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Seni Seviyorum 💕</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: #ffe0ec;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Comic Sans MS", cursive;
-    }
 
-    .love {
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1 {
-      font-size: 40px;
-      color: #ff1e56;
-      margin-bottom: 20px;
-    }
-  </style>
+<title>Seni Seviyorum 💕</title>
+
+
+<style>
+
+body {
+
+margin:0;
+height:100vh;
+background:#ffe0ec;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-family:"Comic Sans MS",cursive;
+
+overflow:hidden;
+
+}
+
+
+/* Kalpler */
+
+.heart {
+
+position:absolute;
+color:rgba(255,0,100,0.25);
+font-size:35px;
+
+animation:float 8s infinite;
+
+}
+
+
+@keyframes float {
+
+from {
+transform:translateY(100vh);
+}
+
+to {
+transform:translateY(-20vh);
+}
+
+}
+
+
+
+.love {
+
+text-align:center;
+z-index:2;
+
+}
+
+
+
+h1 {
+
+font-size:42px;
+color:#ff1e56;
+
+animation:pulse 1.5s infinite;
+
+}
+
+
+@keyframes pulse {
+
+50% {
+transform:scale(1.08);
+}
+
+}
+
+
+
+img {
+
+width:400px;
+max-width:85vw;
+
+}
+
+
+
+</style>
+
 </head>
+
+
 <body>
 
-  <div class="love">
-    <h1>Ben de seni çok seviyorum canım benim 💕</h1>
-    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="300">
-  </div>
+
+<div class="heart" style="left:15%">❤️</div>
+<div class="heart" style="left:40%;animation-delay:2s">💖</div>
+<div class="heart" style="left:70%;animation-delay:4s">💕</div>
+
+
+
+<div class="love">
+
+<h1>
+Ben de seni çok seviyorum Serra 💕
+</h1>
+
+
+<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+
+
+</div>
+
+
 
 </body>
+
 </html>
